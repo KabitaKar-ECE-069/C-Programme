@@ -1,0 +1,23 @@
+#include <stdio.h>
+void powerSet(int arr[],int n)
+{
+    int total= 1<<n;
+    for(int i=0;i<total;i++)
+    {
+        printf("{");
+        for(int j=0;j<n;j++)
+        {
+            if(i%(1<<(j+1))>=(1<<j))
+            printf("%d",arr[j]);
+        }
+        printf("}\n");
+    }
+    
+}
+int main(){
+    int a[]={10,12,15};
+    int n1=3;
+    printf("power set of array a:\n");
+    powerSet(a,n1);
+    return 0;
+}
